@@ -20,8 +20,13 @@ function sumArray(array, n) {
 
   // Tu código aca:
 
-};
-
+  for(let i = 0 ; i < array.length-1 ; i++){
+    for(let x = i + 1; x < array.length ; x++){
+      if (array[i]+array[x] === n ) return true 
+    }
+  }
+  return false
+}
 // No modifiques nada debajo de esta linea //
 
 module.exports = sumArray

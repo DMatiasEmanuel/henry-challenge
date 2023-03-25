@@ -11,8 +11,11 @@ function crearClaseViajero() {
       // Inicializar las propiedades del viajero con los valores recibidos como argumento
 
       // Tu código aca:
-
-    }
+      this.nombre = nombre
+      this.edad = edad
+      this.paises = paises
+      this.compañeros = compañeros
+     }
 
     addCompañero(nombre, nacionalidad, edad) {
       // El método 'addCompañero' recibe un string 'nombre', un string 'nacionalidad' y un entero 'edad' y
@@ -21,6 +24,7 @@ function crearClaseViajero() {
       // No debe retornar nada.
 
       // Tu código aca:
+     this.compañeros.push({ nombre: nombre, nacionalidad: nacionalidad, edad: edad})
 
     }
 
@@ -29,6 +33,7 @@ function crearClaseViajero() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.paises.push(pais)
 
     }
 
@@ -40,7 +45,13 @@ function crearClaseViajero() {
       // viajero.getCompañeros() debería devolver ['John', 'Peter']
 
       // Tu código aca:
-      
+     return this.compañeros.map(function(compañero){
+        return compañero.nombre
+  
+      })
+  
+
+    
     }
 
     getPaises() {
@@ -49,7 +60,7 @@ function crearClaseViajero() {
       // viajero.getPaises() debe devolver ['Belgica', 'Estados Unidos', 'Islandia']
 
       // Tu código aca:
-      
+      return this.paises
     }
 
     getPromedioEdad() {
@@ -71,7 +82,18 @@ function crearClaseViajero() {
 
       // Tu código aca:
 
-    }
+      var j = this.compañeros.map(function(compañero){
+        return compañero.edad})
+        var contador = 0
+      for(let i = 0 ; i < j.length ; i++){
+        contador += j[i]        
+      }
+    
+      return contador / j.length
+  
+       
+      
+    }   
   };
 
   return Viajero;

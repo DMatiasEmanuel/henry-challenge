@@ -14,7 +14,14 @@ function mismaCantidadCaracteres(strings, caracteres) {
 
   // Tu código aca:
 
+  stringsYCaracteres =[]
+  for(let i = 0;i<strings.length;i++)
+  if(strings[i].length === caracteres){
+    stringsYCaracteres.push(strings[i])
+  }
+return stringsYCaracteres
 }
+
 
 // No modifiques nada debajo de esta linea //
 
